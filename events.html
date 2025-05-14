@@ -1,10 +1,9 @@
 <head>
 	<meta charset="UTF-8" />
-	<title>Textos con contenido desplegable</title>
 	<style>
 		body {
-			font-family: Arial, sans-serif;
-			padding: 20px;
+			margin: 0;
+			padding: 0;
 		}
 
 		p {
@@ -88,6 +87,70 @@
 			.content {
 				width: 25rem;
 			}
+			.resize {
+				width: 18rem;
+			}
+		}
+
+		ul.icon-list {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.icon-list li {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			margin-bottom: 12px;
+			font-size: 1rem;
+		}
+
+		.icon-list img {
+			width: 20px;
+			height: auto;
+		}
+
+		li {
+			font-family: "Franklin Gothic Book";
+		}
+
+		h3 {
+			font-family: "Freight Big Pro", sans-serif;
+		}
+
+		.img-position {
+			margin-top: -7.5rem;
+			width: 592px;
+			height: 681px;
+		}
+
+		.flex-2 {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			gap: 20px;
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 40px 20px;
+		}
+
+		.flex-2 > div {
+			text-align: center;
+		}
+
+		@media screen and (max-width: 768px) {
+			.flex-2 {
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.img-position {
+				padding-top: 10rem;
+				width: 391px;
+				height: 447px;
+			}
 		}
 	</style>
 </head>
@@ -118,7 +181,7 @@
 				class="img-size"
 				src="https://www.fairmont-mayakoba.com/content/uploads/2025/05/Enmascarar-grupo-18.webp"
 			/>
-			<p>
+			<p class="resize">
 				NURTURE CONNECTION<br /><br />
 
 				<span style="font-weight: bold"
@@ -136,7 +199,7 @@
 				class="img-size"
 				src="https://www.fairmont-mayakoba.com/content/uploads/2025/05/Enmascarar-grupo-19.webp"
 			/>
-			<p>
+			<p class="resize">
 				NURTURE THE MIND – Reset & Reimagine<br /><br />
 				<span style="font-weight: bold"
 					>Clarity, Confidence & Connection - Friday, June 13th </span
@@ -176,7 +239,7 @@
 				class="img-size"
 				src="https://www.fairmont-mayakoba.com/content/uploads/2025/05/Enmascarar-grupo-20.webp"
 			/>
-			<p>
+			<p class="resize">
 				NURTURE THE BODY – Move & Thrive<br /><br />
 				<span style="font-weight: bold"
 					>Strength, Self-Love & Vitality - Saturday, June 14th </span
@@ -224,7 +287,7 @@
 				class="img-size"
 				src="https://www.fairmont-mayakoba.com/content/uploads/2025/05/Enmascarar-grupo-21.webp"
 			/>
-			<p>
+			<p class="resize">
 				NURTURE THE SOUL – Reflect & Elevate<br /><br />
 				<span style="font-weight: bold"
 					>Gratitude, Vision & Expansion - Sunday, June 16th </span
@@ -242,6 +305,57 @@
 				A joyful gathering to reflect on the journey, build lasting connections,
 				and toast to the future.<br /><br />
 			</p>
+		</div>
+	</div>
+
+	<div style="padding-bottom: 10rem"></div>
+
+	<div style="background-color: #eee7df">
+		<div class="flex-2">
+			<div>
+				<img
+					src="https://www.fairmont-mayakoba.com/content/uploads/2025/05/Sunset-Vibes_Mesa-de-trabajo-1.png"
+				/>
+				<h3>WHY NURTURE?</h3>
+				<p>
+					This isn’t just another retreat—it’s a transformative **experience<br />
+					designed to empower, restore, and elevate**.<br />
+					Through this exclusive **Sunset Vibes x Fairmont Mayakoba<br />
+					collaboration**, guests leave feeling **stronger, inspired, and
+					more<br />
+					confident**— ready to embrace life with renewed energy.
+				</p>
+
+				<ul class="icon-list">
+					<li>
+						<img
+							src="https://mktideas.agency/wp-content/uploads/2025/05/Grupo-60.svg"
+							alt="Icono 1"
+						/>
+						Sustainably designed
+					</li>
+					<li>
+						<img
+							src="https://mktideas.agency/wp-content/uploads/2025/05/Grupo-63.svg"
+							alt="Icono 2"
+						/>
+						Luxury meets empowerment
+					</li>
+					<li>
+						<img
+							src="https://mktideas.agency/wp-content/uploads/2025/05/Grupo-79.svg"
+							alt="Icono 3"
+						/>
+						EveryBODY deserves to feel amazing
+					</li>
+				</ul>
+			</div>
+			<div>
+				<img
+					class="img-position"
+					src="https://www.fairmont-mayakoba.com/content/uploads/2025/05/Enmascarar-grupo-22.webp"
+				/>
+			</div>
 		</div>
 	</div>
 </body>
