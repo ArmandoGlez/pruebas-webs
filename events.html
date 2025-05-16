@@ -10,7 +10,7 @@
 		p {
 			font-family: "Franklin Gothic Book", sans-serif;
 			letter-spacing: 0.03em;
-			color: #585858;
+
 			font-style: normal;
 		}
 
@@ -19,20 +19,27 @@
 			gap: 10px;
 			margin-bottom: 20px;
 			justify-content: center;
-			font-family: "Freight Big Pro", sans-serif;
+			align-items: center;
+			font-size: 2rem;
 		}
 
 		.tabs label {
-			padding: 10px 20px;
-			border-radius: 8px;
+			padding: 1px 20px;
+
 			cursor: pointer;
 			transition: background 0.3s;
+			font-family: "freight-big-pro", serif;
 			color: black;
 		}
 
 		.tabs label:hover {
 			text-decoration: underline;
 			text-decoration-thickness: 3px;
+			text-decoration-color: #707070;
+		}
+
+		.tabs label:not(:last-child) {
+			border-right: 2px solid #707070;
 		}
 
 		input[type="radio"] {
@@ -43,7 +50,7 @@
 			display: none;
 			padding: 15px;
 			border-radius: 8px;
-			width: 54rem;
+			width: 64rem;
 			margin: 0 auto;
 		}
 
@@ -52,12 +59,12 @@
 			flex-direction: row;
 			align-items: center;
 			justify-content: center;
-			gap: 20px;
+			gap: 90px;
 		}
 
 		.img-size {
-			width: 391px;
-			height: 447px;
+			width: 491px;
+			height: 547px;
 		}
 
 		#tab1:checked ~ #content1,
@@ -74,7 +81,27 @@
 		#tab4:checked ~ .tabs label[for="tab4"] {
 			text-decoration: underline;
 			text-decoration-thickness: 3px;
-			color: #707070;
+			color: black;
+			text-decoration-color: #707070;
+		}
+
+		.resize {
+			line-height: 2rem;
+		}
+
+		.resize2 {
+			line-height: 1.4rem;
+			font-size: 1rem;
+		}
+
+		.resize3 {
+			line-height: 1.2rem;
+			font-size: 1rem;
+		}
+
+		.resize4 {
+			line-height: 1rem;
+			font-size: 1rem;
 		}
 
 		@media only screen and (max-width: 600px) {
@@ -117,7 +144,8 @@
 		}
 
 		h3 {
-			font-family: "Freight Big Pro", sans-serif;
+			font-family: "freight-big-pro", serif;
+			font-size: 1.8rem;
 		}
 
 		.img-position {
@@ -137,7 +165,7 @@
 		}
 
 		.flex-2 > div {
-			text-align: center;
+			text-align: left;
 		}
 
 		@media screen and (max-width: 768px) {
@@ -148,7 +176,6 @@
 			}
 
 			.img-position {
-				
 				width: 391px;
 				height: 447px;
 			}
@@ -188,9 +215,8 @@
 				<span style="font-weight: bold"
 					>Welcoming Gathering: Celebrate & Connect</span
 				><br />
-				Welcoming Gathering: Celebrate & Connect A joyful gathering to reflect
-				on the journey, build lasting connections, and toast to the future at El
-				Cielo Rooftop Bar.
+				A joyful gathering to reflect on the journey, build lasting connections,
+				and toast to the future at El Cielo Rooftop Bar.
 			</p>
 		</div>
 	</div>
@@ -200,7 +226,7 @@
 				class="img-size"
 				src="https://www.fairmont-mayakoba.com/content/uploads/2025/05/Enmascarar-grupo-19.webp"
 			/>
-			<p class="resize">
+			<p class="resize2">
 				NURTURE THE MIND – Reset & Reimagine<br /><br />
 				<span style="font-weight: bold"
 					>Clarity, Confidence & Connection - Friday, June 13th </span
@@ -240,7 +266,7 @@
 				class="img-size"
 				src="https://www.fairmont-mayakoba.com/content/uploads/2025/05/Enmascarar-grupo-20.webp"
 			/>
-			<p class="resize">
+			<p class="resize3">
 				NURTURE THE BODY – Move & Thrive<br /><br />
 				<span style="font-weight: bold"
 					>Strength, Self-Love & Vitality - Saturday, June 14th </span
@@ -288,7 +314,7 @@
 				class="img-size"
 				src="https://www.fairmont-mayakoba.com/content/uploads/2025/05/Enmascarar-grupo-21.webp"
 			/>
-			<p class="resize">
+			<p class="resize4">
 				NURTURE THE SOUL – Reflect & Elevate<br /><br />
 				<span style="font-weight: bold"
 					>Gratitude, Vision & Expansion - Sunday, June 16th </span
@@ -311,7 +337,7 @@
 
 	<div style="padding-bottom: 10rem"></div>
 
-	<div style=" width: 100%">
+	<div style="width: 100%">
 		<div class="flex-2">
 			<div>
 				<img
