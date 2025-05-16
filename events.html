@@ -14,6 +14,13 @@
 			font-style: normal;
 		}
 
+		.list {
+			font-family: "Franklin Gothic Book", sans-serif;
+			line-height: 1.3rem;
+
+			font-style: normal;
+		}
+
 		.tabs {
 			display: flex;
 			gap: 10px;
@@ -21,6 +28,8 @@
 			justify-content: center;
 			align-items: center;
 			font-size: 2rem;
+			padding-top: 5rem;
+			padding-bottom: 3rem;
 		}
 
 		.tabs label {
@@ -104,6 +113,18 @@
 			font-size: 1rem;
 		}
 
+		.button-book-now {
+			background-color: black;
+			color: white !important;
+			padding: 0.9rem 2.8rem;
+			border: 2px solid black;
+			text-decoration: none !important;
+		}
+		.button-book-now:hover {
+			background-color: white !important;
+			color: black !important;
+		}
+
 		@media only screen and (max-width: 600px) {
 			.container-img {
 				flex-direction: column-reverse;
@@ -145,11 +166,11 @@
 
 		h3 {
 			font-family: "freight-big-pro", serif;
-			font-size: 1.8rem;
+			font-size: 1.9rem;
+			font-weight: lighter;
 		}
 
 		.img-position {
-			margin-top: -7.5rem;
 			width: 592px;
 			height: 681px;
 		}
@@ -158,8 +179,9 @@
 			display: flex;
 			flex-direction: row;
 			justify-content: center;
+			align-items: center;
 			gap: 20px;
-			max-width: 1200px;
+			max-width: 1400px;
 			margin: 0 auto;
 			padding: 40px 20px;
 		}
@@ -344,7 +366,7 @@
 					src="https://www.fairmont-mayakoba.com/content/uploads/2025/05/Sunset-Vibes_Mesa-de-trabajo-1.png"
 				/>
 				<h3>WHY NURTURE?</h3>
-				<p>
+				<p class="list">
 					This isn’t just another retreat—it’s a transformative **experience<br />
 					designed to empower, restore, and elevate**.<br />
 					Through this exclusive **Sunset Vibes x Fairmont Mayakoba<br />
@@ -384,5 +406,29 @@
 				/>
 			</div>
 		</div>
+	</div>
+	<div style="text-align: center">
+		<p class="center" style="margin-top: 3rem">
+			<span style="font-weight: bolder" class="uppercase bold"
+				>BOOKING WINDOW:</span
+			>
+			March 10 to May 31, 2025
+		</p>
+		<p class="center">
+			<span style="font-weight: bolder" class="uppercase bold"
+				>STAY WINDOW:</span
+			>
+			May 21 to September 21, 2025
+		</p>
+		<p class="center italic" style="font-style: italic; padding-bottom: 1rem">
+			Terms &amp; conditions apply
+		</p>
+		<a
+			href="https://www.fairmont.com/reservations/check-availability/?hc=MYK&partner_id=mykmayakoba&na=2&nc=0&ad=&dd=&pc=HA13"
+			target="_blank"
+			class="center button-book-now"
+			style="font-family: 'Franklin Gothic;'"
+			>BOOK NOW</a
+		>
 	</div>
 </body>
