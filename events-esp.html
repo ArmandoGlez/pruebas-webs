@@ -1,0 +1,448 @@
+<head>
+  <meta charset="UTF-8" />
+  <title>Textos con contenido desplegable</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    p {
+      font-family: "Franklin Gothic Book", sans-serif;
+      letter-spacing: 0.03em;
+
+      font-style: normal;
+    }
+
+    .list {
+      font-family: "Franklin Gothic Book", sans-serif;
+      line-height: 1.3rem;
+
+      font-style: normal;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      padding-top: 5rem;
+      padding-bottom: 3rem;
+    }
+
+    .tabs label {
+      padding: 1px 20px;
+
+      cursor: pointer;
+      transition: background 0.3s;
+      font-family: "freight-big-pro", serif;
+      color: black;
+    }
+
+    .tabs label:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 3px;
+      text-decoration-color: #707070;
+    }
+
+    .tabs label:not(:last-child) {
+      border-right: 2px solid #707070;
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    .content {
+      display: none;
+      padding: 15px;
+      border-radius: 8px;
+      width: 64rem;
+      margin: 0 auto;
+    }
+
+    .container-img {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 90px;
+    }
+
+    .img-size {
+      width: 491px;
+      height: 547px;
+    }
+
+    #tab1:checked ~ #content1,
+    #tab2:checked ~ #content2,
+    #tab3:checked ~ #content3,
+    #tab4:checked ~ #content4 {
+      display: block;
+    }
+
+    /* Estilo activo para el tab seleccionado */
+    #tab1:checked ~ .tabs label[for="tab1"],
+    #tab2:checked ~ .tabs label[for="tab2"],
+    #tab3:checked ~ .tabs label[for="tab3"],
+    #tab4:checked ~ .tabs label[for="tab4"] {
+      text-decoration: underline;
+      text-decoration-thickness: 3px;
+      color: black;
+      text-decoration-color: #707070;
+    }
+
+    .resize {
+      line-height: 2rem;
+    }
+
+    .resize2 {
+      line-height: 1.4rem;
+      font-size: 1rem;
+    }
+
+    .resize3 {
+      line-height: 1.2rem;
+      font-size: 1rem;
+    }
+
+    .resize4 {
+      line-height: 1rem;
+      font-size: 1rem;
+    }
+
+    .button-book-now {
+      background-color: black;
+      color: white !important;
+      padding: 0.9rem 2.8rem;
+      border: 2px solid black;
+      text-decoration: none !important;
+    }
+    .button-book-now:hover {
+      background-color: white !important;
+      color: black !important;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .container-img {
+        flex-direction: column-reverse;
+      }
+      .img-size {
+        width: 291px;
+        height: 347px;
+      }
+      .content {
+        width: 20rem;
+      }
+      .resize {
+        width: 15rem;
+      }
+
+      .resize2 {
+        width: 15rem;
+      }
+
+      .resize3 {
+        width: 15rem;
+      }
+
+      .resize4 {
+        width: 15rem;
+      }
+
+      .tabs {
+        font-size: 1.1rem;
+        gap: 5px;
+      }
+    }
+
+    ul.icon-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .icon-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    .icon-list img {
+      width: 20px;
+      height: auto;
+    }
+
+    li {
+      font-family: "Franklin Gothic Book";
+    }
+
+    h3 {
+      font-family: "freight-big-pro", serif;
+      font-size: 1.9rem;
+      font-weight: lighter;
+    }
+
+    .img-position {
+      width: 592px;
+      height: 681px;
+    }
+
+    .flex-2 {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .flex-2 > div {
+      text-align: left;
+    }
+
+    @media screen and (max-width: 768px) {
+      .flex-2 {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .img-position {
+        width: 391px;
+        height: 447px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Radios ocultos -->
+  <input type="radio" name="tab" id="tab1" checked />
+  <input type="radio" name="tab" id="tab2" />
+  <input type="radio" name="tab" id="tab3" />
+  <input type="radio" name="tab" id="tab4" />
+
+  <!-- Etiquetas como botones -->
+  <div class="tabs">
+    <label for="tab1">Día 1</label>
+    <label for="tab2">Día 2</label>
+    <label for="tab3">Día 3</label>
+    <label for="tab4">Día 4</label>
+  </div>
+
+  <!-- Contenidos -->
+  <div id="content1" class="content">
+    <div class="container-img">
+      <img
+        class="img-size"
+        src="https://www.fairmont-mayakoba.com/content/uploads/2025/05/Concha.webp"
+      />
+      <p class="resize">
+        NUTRE LA CONEXIÓN<br /><br />
+
+        <span style="font-weight: bold"
+          >6:30 am<br />Encuentro de Bienvenida: Celebra y Conecta </span
+        ><br />
+        Una alegre reunión para reflexionar sobre el viaje, construir conexiones
+        duraderas y brindar por el futuro en El Cielo Rooftop Bar
+      </p>
+    </div>
+  </div>
+  <div id="content2" class="content">
+    <div class="container-img">
+      <img
+        class="img-size"
+        src="https://www.fairmont-mayakoba.com/content/uploads/2025/05/Cama-H.webp"
+      />
+      <p class="resize2">
+        NUTRE LA MENTE – Reinicia e Imagina<br /><br />
+        <span style="font-weight: bold"
+          >Claridad, Confianza y Conexión - Viernes 27 de junio </span
+        ><br /><br />
+
+        <span style="font-weight: bold"
+          >• 8:00 am | <i>Maykana Beach</i><br />Meditación Guiada y
+          Establecimiento de Intenciones al Amanecer</span
+        ><br />
+        Conéctate con tu propósito en una meditación frente al mar guiada por un
+        experto en mindfulness. <br /><br />
+
+        <span style="font-weight: bold"
+          >• 12:00 pm | Almuerzo y charla combinados (<i>Brisas</i>) <br />El
+          Poder del Ser: Charla Íntima con Denise Foley</span
+        ><br />
+        Únete a una conversación íntima y sincera sobre resiliencia,
+        emprendimiento y cómo abrazar tu camino único durante una comida
+        nutritiva, elaborada por un chef, con ingredientes locales y orgánicos
+        en un entorno espectacular frente al mar.<br /><br />
+
+        <span style="font-weight: bold"
+          >• 3:00 pm | <i>Spa Boutique</i><br />Taller de Moda Consciente y
+          Sostenibilidad</span
+        ><br />
+        Aprende a crear un guardarropa que te empodere mientras proteges el
+        planeta, con la tecnología Effortless Support™ de Sunset Vibes y
+        prácticas sostenibles.
+        <br /><br />
+
+        <span style="font-weight: bold"
+          >• 4:00 pm <br />Tratamiento local curado en el Spa Fairmont </span
+        ><br />
+        Reconéctate con tu cuerpo y relájate en las instalaciones del spa con un
+        tratamiento inspirado en tradiciones locales.
+      </p>
+    </div>
+  </div>
+  <div id="content3" class="content">
+    <div class="container-img">
+      <img
+        class="img-size"
+        src="https://www.fairmont-mayakoba.com/content/uploads/2025/05/Resd.webp"
+      />
+      <p class="resize3">
+        NUTRE EL CUERPO – Muévete y Florece<br /><br />
+        <span style="font-weight: bold"
+          >Fuerza, Amor Propio y Vitalidad - Sábado 28 de junio </span
+        ><br /><br />
+
+        <span style="font-weight: bold"
+          >• 8:00 am <br />
+          Yoga Frente al Mar y Flujo de Fuerza al Amanecer</span
+        ><br />
+        Sesión guiada de movimiento diseñada para todos los cuerpos, empoderando
+        la fuerza interior.<br /><br />
+
+        <span style="font-weight: bold">• Confianza en Movimiento </span><br />
+
+        Deportes acuáticos, Kayak, Catamarán y SUP.<br /><br />
+
+        <span style="font-weight: bold">
+          • 12:00 pm <br />Almuerzo de Bienestar Empoderado </span
+        ><br />
+        Un menú rico en nutrientes diseñado para alimentar el cuerpo y despertar
+        la alegría, acompañado de una conversación sobre bienestar holístico en
+        el Fairmont Spa Serenity Lounge.
+        <br /><br />
+        <span style="font-weight: bold">
+          • 4:00 pm <br />El Arte de Soltar: Temazcal y Ceremonia de
+          Clausura</span
+        ><br />
+        Libera dudas, miedos o creencias limitantes en un ritual ceremonial de
+        fuego, entrando con fuerza y claridad a un nuevo capítulo.
+        <br /><br />
+        <span style="font-weight: bold">
+          • 7:30 pm | <i>Fuego</i><br />Cena Bajo las Estrellas</span
+        ><br />
+        Una cena a la luz de las velas frente al mar, con música acústica en
+        vivo, narración de historias y celebración del viaje.
+      </p>
+    </div>
+  </div>
+  <div id="content4" class="content">
+    <div class="container-img">
+      <img
+        class="img-size"
+        src="https://www.fairmont-mayakoba.com/content/uploads/2025/05/Meditacion.webp"
+      />
+      <p class="resize4">
+        NUTRE EL ALMA – Reflexiona y Eleva<br /><br />
+        <span style="font-weight: bold"
+          >Gratitud, Visión y Expansión - Domingo 29 de junio </span
+        ><br /><br />
+
+        <span style="font-weight: bold">9:00 am </span><br /><br />
+
+        <span style="font-weight: bold"
+          >• Journaling y Mapeo de Visión en la Playa </span
+        ><br />
+        Reflexión guiada para establecer metas audaces y transformadoras más
+        allá del retiro.<br /><br />
+
+        <span style="font-weight: bold"
+          >• Desayuno de Despedida: Celebra y Conecta | <i>La Laguna</i></span
+        ><br />
+        Una alegre reunión para reflexionar sobre el viaje, fortalecer
+        conexiones duraderas y brindar por lo que viene.<br /><br />
+      </p>
+    </div>
+  </div>
+
+  <div style="padding-bottom: 10rem"></div>
+
+  <div style="width: 100%">
+    <div class="flex-2">
+      <div>
+        <img
+          src="https://www.fairmont-mayakoba.com/content/uploads/2025/05/Sunset-Vibes_Mesa-de-trabajo-1.png"
+        />
+        <h3>¿POR QUÉ NUTRIR?</h3>
+        <p class="list">
+          Esto no es solo otro retiro—es una experiencia transformadora diseñada
+          para empoderar, restaurar y elevar. A través de esta exclusiva
+          colaboración entre Sunset Vibes y Fairmont Mayakoba, los huéspedes se
+          van sintiéndose más fuertes, inspirados y seguros, listos para abrazar
+          la vida con energía renovada.
+        </p>
+
+        <ul class="icon-list">
+          <li>
+            <img
+              src="https://mktideas.agency/wp-content/uploads/2025/05/Grupo-60.svg"
+              alt="Icono 1"
+            />
+            Diseñado de manera sostenible
+          </li>
+          <li>
+            <img
+              src="https://mktideas.agency/wp-content/uploads/2025/05/Grupo-63.svg"
+              alt="Icono 2"
+            />
+            El lujo se une al empoderamiento
+          </li>
+          <li>
+            <img
+              src="https://mktideas.agency/wp-content/uploads/2025/05/Grupo-79.svg"
+              alt="Icono 3"
+            />
+            ¿Estás listo para NUTRIR tu mente, cuerpo y alma?
+          </li>
+        </ul>
+      </div>
+      <div>
+        <img
+          class="img-position"
+          src="https://www.fairmont-mayakoba.com/content/uploads/2025/05/Enmascarar-grupo-22.webp"
+        />
+      </div>
+    </div>
+  </div>
+  <div style="text-align: center">
+    <p class="center">
+      <span style="font-weight: bolder" class="uppercase bold"
+        >PERÍODO DE ESTANCIA:</span
+      >
+      Del 26 al 29 de junio de 2025
+    </p>
+    <p class="center italic" style="font-style: italic; padding-bottom: 1rem">
+      Aplican términos y condiciones
+    </p>
+    <a
+      href="https://www.fairmont.com/reservations/es/select-room/?hc=MYK&ad=26/06/2025&dd=29/06/2025&nn=2&na=2&nc=0&ada=0&bt=0&pc=P01RET"
+      target="_blank"
+      class="center button-book-now"
+      style="font-family: 'Franklin Gothic;'"
+      >RESERVA AHORA</a
+    >
+  </div>
+</body>
