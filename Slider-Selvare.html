@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Scroll Horizontal con Rueda del Mouse</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			html,
+			body {
+				height: 100vh;
+				overflow: hidden; /* Ocultamos scroll vertical */
+			}
+
+			.scroll-container {
+				display: flex;
+				height: 100vh;
+				overflow-x: scroll;
+				scroll-behavior: smooth;
+			}
+
+			/*SECCIONES*/
+
+			section {
+				flex: 0 0 100vw;
+
+				font-size: 2rem;
+			}
+			.seccion1 {
+				display: flex;
+				flex-direction: column;
+				padding-left: 13.063rem;
+				padding-top: 3rem;
+			}
+			.seccion2 {
+				margin-left: -12.875rem;
+			}
+			.seccion3 {
+				padding-top: 3rem;
+				margin-left: -22.875rem;
+			}
+			.seccion4 {
+				display: flex;
+				flex-direction: row;
+				margin-left: -58rem;
+			}
+			.seccion4 {
+				display: flex;
+				flex-direction: row;
+				margin-left: -58rem;
+				position: relative;
+			}
+			.seccion5 {
+				margin-left: 10rem;
+				margin-top: 3rem;
+			}
+			.seccion6 {
+				margin-left: -45rem;
+			}
+			.seccion7 {
+				margin-left: 10rem;
+				margin-top: 3rem;
+			}
+			.seccion8 {
+				margin-left: -45rem;
+			}
+			.titulo {
+				font-family: "Canela Deck Trial", sans-serif;
+				font-weight: 100;
+				color: #303527;
+				font-size: 4.063rem;
+			}
+			.texto {
+				font-family: "Inter", sans-serif;
+				font-weight: 100;
+				color: #303527;
+				font-size: 1.188rem;
+				padding-top: 3.125rem;
+				padding-bottom: 4.125rem;
+			}
+
+			.lifestyle-btn {
+				font-family: "Inter", sans-serif;
+				font-weight: 600;
+				font-size: 1.313rem;
+				padding: 0.75rem 2rem;
+				color: #1f1f1f;
+				border: 1px solid #1f1f1f;
+				border-radius: 999px;
+				background-color: transparent;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+				cursor: pointer;
+				width: 31.563rem;
+			}
+
+			.img-size1 {
+				height: 100vh;
+				object-fit: cover;
+			}
+
+			.img-size2 {
+				height: 50%;
+				object-fit: cover;
+				margin-right: -23rem;
+				z-index: 2;
+				margin-top: 17rem;
+			}
+			.img-size3 {
+				margin-left: -19rem;
+				z-index: 3;
+				height: 70%;
+				margin-top: 7rem;
+			}
+			.img-size4 {
+				height: 100%;
+				object-fit: cover;
+			}
+
+			/* ANIMACIÓN DE ZOOM */
+
+			.zoom-wrapper {
+				height: 100%; /* tamaño fijo */
+				overflow: hidden; /* evita que se vea el exceso del zoom */
+			}
+
+			.zoom-image4 {
+				object-fit: cover;
+				transform: scale(1);
+				transition: transform 1s ease;
+				will-change: transform;
+			}
+
+			.zoom-image4.zoom-visible {
+				transform: scale(1.04);
+			}
+
+			.zoom-image {
+				transition: transform 1s ease;
+				transform: scale(1);
+				will-change: transform;
+			}
+
+			.zoom-image.zoom-visible {
+				transform: scale(1.1);
+				opacity: 1;
+			}
+
+			.zoom-image2 {
+				transition: transform 1s ease;
+				transform: scale(1);
+				width: 100%;
+				will-change: transform;
+			}
+
+			.zoom-image2.zoom-visible {
+				transform: scale(1.1);
+				opacity: 1;
+			}
+			.zoom-image3 {
+				transition: transform 1s ease;
+				transform: translateX(-100px);
+				will-change: transform;
+			}
+
+			.zoom-image3.zoom-visible {
+				transform: translateX(0);
+				opacity: 1;
+			}
+
+			.contenedor-flecha {
+				position: fixed;
+				bottom: 62px;
+				left: 0;
+				width: 100%;
+				height: auto;
+				z-index: 9999;
+				pointer-events: none; /* evita que bloquee clics si hace falta */
+			}
+
+			.flecha-scroll-horizontal {
+				position: fixed;
+				bottom: 30px;
+				left: 0;
+				transform: translateY(0);
+				width: 62px;
+				transition: left 0.2s ease;
+				z-index: 9999;
+				transition: left 0.2s ease, opacity 0.5s ease;
+			}
+			.linea-flecha {
+				position: absolute;
+				top: 100%; /* justo debajo de la imagen */
+				left: 0;
+				width: 100%; /* misma anchura que la flecha */
+				height: 2px;
+				background-color: #c9c4bd;
+				opacity: 1;
+				transition: opacity 0.4s ease;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="scroll-container" id="scroll-container">
+			<section class="seccion1">
+				<h1 class="titulo">
+					DISCOVER <br />
+					OUR VILLAS
+				</h1>
+				<p class="texto">
+					From the moment you step into the spacious <br />
+					living area, you’ll be surrounded by the <br />
+					breathtaking views of the jungle and the sea <br />
+					that define every room. The elegantly designed <br />
+					sitting areas, sophisticated dining spaces, and <br />
+					serene bedrooms create a refined yet inviting <br />
+					atmosphere, blending architectural luxury with<br />
+					the natural beauty of the forest.
+				</p>
+
+				<button class="lifestyle-btn">EXPERIENCE YOUR NEW LIFESTYLE</button>
+			</section>
+			<section class="seccion2">
+				<div class="zoom-wrapper">
+					<img
+						class="img-size1 zoom-image"
+						src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Enmascarar-grupo-7.webp"
+					/>
+				</div>
+			</section>
+			<section class="seccion3">
+				<h1 class="titulo">Living Area</h1>
+				<p class="texto">
+					Immerse yourself in the finest comfort of our <br />
+					spacious living area. Relax by the fireplace, <br />
+					unwind on the plush sofa or stay productive in <br />
+					the serene study room.
+				</p>
+
+				<img
+					src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Linea-5.png"
+				/>
+			</section>
+
+			<section class="seccion4">
+				<img
+					class="img-size2 zoom-image4"
+					src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Enmascarar-grupo-11-1.webp"
+				/>
+
+				<img
+					src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Enmascarar-grupo-10-1.webp"
+				/>
+
+				<img
+					class="img-size3 zoom-image4"
+					src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Enmascarar-grupo-12-1.webp"
+				/>
+			</section>
+
+			<section class="seccion5">
+				<h1 class="titulo">Dining Area</h1>
+				<p class="texto">
+					Enjoy culinary delights in the elegant dining <br />
+					area with its generous indoor table and <br />
+					poolside terrace seating. Prepare meals in the <br />
+					large kitchen or use the separate barbecue <br />
+					area for a perfect outdoor dining experience.
+				</p>
+
+				<img
+					src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Linea-5.png"
+				/>
+			</section>
+
+			<section class="seccion6">
+				<div class="zoom-wrapper">
+					<img
+						class="zoom-image2"
+						src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Enmascarar-grupo-13-1.webp"
+					/>
+				</div>
+			</section>
+
+			<section class="seccion7">
+				<h1 class="titulo">Bedrooms</h1>
+				<p class="texto">
+					Wake up to breathtaking ocean views in one of <br />
+					our three stylish bedrooms. Enjoy the rising <br />
+					and setting sun from your balcony, and <br />embrace the calming
+					sounds of the ocean waves.
+				</p>
+
+				<img
+					src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Linea-5.png"
+				/>
+			</section>
+
+			<section class="seccion8">
+				<img
+					class="img-size4 zoom-image3"
+					src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Grupo-39.webp"
+				/>
+			</section>
+			<!-- FLECHA QUE SE MUEVE HASTA EL FINAL DE LA PÁGINA -->
+			<div class="contenedor-flecha">
+				<img
+					src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Grupo-39.png"
+					class="flecha-scroll-horizontal"
+					alt="Flecha"
+				/>
+				<div class="linea-flecha"></div>
+			</div>
+		</div>
+
+		<script>
+			//FLECHA y LINEA QUE SE MUEVE HASTA EL FIANL DE LA PÁGINA
+			const container = document.getElementById("scroll-container"); //CONTENEDOR
+			const flecha = document.querySelector(".flecha-scroll-horizontal"); //FLECHA
+			const elementos = document.querySelectorAll(".linea-flecha"); //LINEA
+
+			container.addEventListener("scroll", () => {
+				const scrollLeft = container.scrollLeft;
+				const maxScroll = container.scrollWidth - container.clientWidth; //RESTA EL ANCHO DEL CONTENEDOR
+
+				const porcentaje = scrollLeft / maxScroll;
+				const left = 5 + porcentaje * 85;
+
+				flecha.style.left = `${left}vw`;
+
+				// Ocultar si llegamos al final
+				if (porcentaje > 0.99 || porcentaje < 0.05) {
+					flecha.style.opacity = 0;
+				} else {
+					flecha.style.opacity = 1;
+				}
+
+				elementos.forEach((el) => {
+					if (porcentaje > 0.99 || porcentaje < 0.05) {
+						el.style.opacity = 0;
+					} else {
+						el.style.opacity = 1;
+					}
+				});
+			});
+
+			//ANIMACIÓN SCROLL
+
+			function createObserver(selector, threshold) {
+				const elements = document.querySelectorAll(selector);
+
+				const observer = new IntersectionObserver(
+					(entries) => {
+						entries.forEach((entry) => {
+							if (entry.isIntersecting) {
+								entry.target.classList.add("zoom-visible");
+							} else {
+								entry.target.classList.remove("zoom-visible");
+							}
+						});
+					},
+					{ threshold }
+				);
+
+				elements.forEach((el) => observer.observe(el));
+			}
+
+			// Usos:
+			createObserver(".zoom-image, .zoom-image2, .zoom-image3", 0.3);
+			createObserver(".zoom-image4", 0.1);
+
+			window.addEventListener(
+				"wheel",
+				function (e) {
+					e.preventDefault(); // Evita el scroll vertical
+					container.scrollLeft += e.deltaY; // Usa el scroll vertical para mover horizontal
+				},
+				{ passive: false }
+			);
+		</script>
+	</body>
+</html>
