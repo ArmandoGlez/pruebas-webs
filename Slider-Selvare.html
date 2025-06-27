@@ -2,7 +2,7 @@
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<title>Slider Selvare</title>
+		<title>Scroll Selvare</title>
 		<style>
 			* {
 				margin: 0;
@@ -377,10 +377,21 @@
 				"wheel",
 				function (e) {
 					e.preventDefault(); // Evita el scroll vertical
-					container.scrollLeft += e.deltaY; // Usa el scroll vertical para mover horizontal
+
+					const velocidad = 3; // 🔁 Ajusta este número para controlar la velocidad
+
+					container.scrollLeft += e.deltaY * velocidad; // Aumenta la velocidad del scroll horizontal
 				},
 				{ passive: false }
 			);
+			// Evita el scroll vertical en móvil mientras se toca el contenedor
+			container.addEventListener("touchstart", () => {
+				document.body.style.overflow = "hidden";
+			});
+
+			container.addEventListener("touchend", () => {
+				document.body.style.overflow = "";
+			});
 		</script>
 	</body>
 </html>
