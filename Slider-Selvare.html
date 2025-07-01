@@ -2,6 +2,7 @@
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Scroll Selvare</title>
 		<style>
 			* {
@@ -23,6 +24,10 @@
 				scroll-behavior: smooth;
 			}
 
+			.mobile {
+				display: none;
+			}
+
 			/*SECCIONES*/
 
 			section {
@@ -30,6 +35,7 @@
 
 				font-size: 2rem;
 			}
+
 			.seccion1 {
 				display: flex;
 				flex-direction: column;
@@ -68,12 +74,29 @@
 			.seccion8 {
 				margin-left: -45rem;
 			}
+			.privacy {
+				font-family: "Inter", sans-serif;
+				font-weight: 100;
+				color: #303527;
+				font-size: 1.188rem;
+				padding-top: 2rem;
+				padding-left: 5rem;
+			}
+
+			.container-priv {
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 1;
+			}
+
 			.titulo {
 				font-family: "Canela Deck Trial", sans-serif;
 				font-weight: 100;
 				color: #303527;
 				font-size: 4.063rem;
 			}
+
 			.texto {
 				font-family: "Inter", sans-serif;
 				font-weight: 100;
@@ -202,9 +225,170 @@
 				opacity: 1;
 				transition: opacity 0.4s ease;
 			}
+
+			@media screen and (min-width: 1920px) {
+				.titulo {
+					font-size: 4.3rem;
+				}
+
+				.texto {
+					font-size: 1.5rem;
+				}
+				.seccion1 {
+					padding-top: 10rem;
+				}
+				.seccion2 {
+					margin-left: -62.875rem;
+				}
+
+				.seccion3 {
+					padding-top: 10rem;
+				}
+
+				.seccion4 {
+					margin-left: -95.875rem;
+				}
+
+				.img-size2 {
+					margin-top: 27rem;
+				}
+				.img-size3 {
+					margin-top: 15rem;
+				}
+				.seccion5 {
+					margin-top: 8rem;
+				}
+				.seccion6 {
+					margin-left: -55rem;
+				}
+				.seccion7 {
+					margin-top: 8rem;
+				}
+			}
+
+			/* VERSIÓN MOBILE */
+
+			@media (max-width: 768px) {
+				.mobile {
+					display: block;
+				}
+				.scroll-container {
+					display: none;
+				}
+
+				.scroll-container-mobile {
+					display: flex;
+					height: 100vh;
+					overflow-x: scroll;
+					scroll-behavior: smooth;
+					gap: 10rem;
+				}
+
+				.mobile-size {
+					display: flex;
+				}
+
+				.privacy {
+					font-size: 0.8rem;
+					padding-left: 1rem;
+				}
+
+				section {
+					flex: 0 0 100vw;
+					font-size: 2rem; /* Si quieres mantener altura completa por sección */
+				}
+
+				body {
+					overflow: auto; /* Permitimos scroll vertical en mobile */
+				}
+				.titulo {
+					font-size: 2rem;
+				}
+
+				.texto {
+					font-size: 1rem;
+				}
+
+				.contenedor-flecha-mobile {
+					position: fixed;
+					bottom: 52px;
+					left: 0;
+					width: 100%;
+					height: auto;
+					z-index: 9999;
+					pointer-events: none; /* evita que bloquee clics si hace falta */
+				}
+
+				.flecha-scroll-horizontal-mobile {
+					position: fixed;
+					bottom: 30px;
+					left: 0;
+					transform: translateY(0);
+					width: 42px;
+					transition: left 0.2s ease;
+					z-index: 9999;
+					transition: left 0.2s ease, opacity 0.5s ease;
+				}
+				.linea-flecha-mobile {
+					position: absolute;
+					top: 100%; /* justo debajo de la imagen */
+					left: 0;
+					width: 100%; /* misma anchura que la flecha */
+					height: 2px;
+					background-color: #c9c4bd;
+					opacity: 1;
+					transition: opacity 0.4s ease;
+				}
+				.seccion1-mobile {
+					display: flex;
+					flex-direction: column;
+					text-align: center;
+					justify-content: center;
+					align-items: center;
+					padding-top: 5rem;
+				}
+				.lifestyle-btn {
+					font-size: 0.625rem;
+					padding: 0.75rem 2rem;
+					letter-spacing: 0.05em;
+					width: 16rem;
+				}
+
+				.seccion2-mobile {
+					display: flex;
+					flex-direction: column;
+					text-align: center;
+					justify-content: center;
+					align-items: center;
+					padding-top: 5rem;
+				}
+				.img-mobile1 {
+					padding-top: 1.25rem;
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+				}
+				.img-mobile2 {
+					padding-top: 1.25rem;
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+				}
+				.seccion3 {
+					display: flex;
+					text-align: center;
+					justify-content: center;
+					align-items: center;
+					padding-left: 0.5rem;
+					padding-top: 5rem;
+				}
+			}
 		</style>
 	</head>
 	<body>
+		<div class="container-priv">
+			<p class="privacy">| &nbsp;&nbsp;&nbsp;&nbsp;PRIVACY & LUXURY</p>
+		</div>
 		<div class="scroll-container" id="scroll-container">
 			<section class="seccion1">
 				<h1 class="titulo">
@@ -232,6 +416,7 @@
 					/>
 				</div>
 			</section>
+
 			<section class="seccion3">
 				<h1 class="titulo">Living Area</h1>
 				<p class="texto">
@@ -306,6 +491,7 @@
 					src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Grupo-39.webp"
 				/>
 			</section>
+
 			<!-- FLECHA QUE SE MUEVE HASTA EL FINAL DE LA PÁGINA -->
 			<div class="contenedor-flecha">
 				<img
@@ -317,8 +503,102 @@
 			</div>
 		</div>
 
+		<!--HTML PARA MOBILE -->
+		<div class="scroll-container-mobile" id="scroll-mobile2">
+			<div class="container-priv">
+				<p class="privacy">| &nbsp;&nbsp;&nbsp;&nbsp;PRIVACY & LUXURY</p>
+			</div>
+			<section class="seccion1-mobile">
+				<h1 class="titulo">
+					DISCOVER <br />
+					OUR VILLAS
+				</h1>
+				<p class="texto">
+					From the moment you step into the spacious <br />
+					living area, you’ll be surrounded by the <br />
+					breathtaking views of the jungle and the sea <br />
+					that define every room. The elegantly designed <br />
+					sitting areas, sophisticated dining spaces, and <br />
+					serene bedrooms create a refined yet inviting <br />
+					atmosphere, blending architectural luxury with<br />
+					the natural beauty of the forest.
+				</p>
+
+				<button class="lifestyle-btn">EXPERIENCE YOUR NEW LIFESTYLE</button>
+
+				<div class="zoom-wrapper">
+					<img
+						class="img-mobile2"
+						src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Enmascarar-grupo-7.webp"
+					/>
+				</div>
+			</section>
+
+			<section class="seccion2-mobile">
+				<h1 class="titulo">Living Area</h1>
+				<p class="texto">
+					Immerse yourself in the finest comfort of our <br />
+					spacious living area. Relax by the fireplace, <br />
+					unwind on the plush sofa or stay productive in <br />
+					the serene study room.
+				</p>
+
+				<img
+					class="img-mobile2"
+					src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Enmascarar-grupo-12-1.webp"
+				/>
+			</section>
+
+			<section class="seccion2-mobile">
+				<h1 class="titulo">Dining Area</h1>
+				<p class="texto">
+					Enjoy culinary delights in the elegant dining <br />
+					area with its generous indoor table and <br />
+					poolside terrace seating. Prepare meals in the <br />
+					large kitchen or use the separate barbecue <br />
+					area for a perfect outdoor dining experience.
+				</p>
+
+				<img
+					src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Linea-5.png"
+				/>
+
+				<div class="zoom-wrapper">
+					<img
+						class="img-mobile2 zoom-image2"
+						src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Enmascarar-grupo-13-1.webp"
+					/>
+				</div>
+			</section>
+
+			<section class="seccion2-mobile">
+				<h1 class="titulo">Bedrooms</h1>
+				<p class="texto">
+					Wake up to breathtaking ocean views in one of <br />
+					our three stylish bedrooms. Enjoy the rising <br />
+					and setting sun from your balcony, and <br />embrace the calming
+					sounds of the ocean waves.
+				</p>
+
+				<img
+					class="img-mobile2 zoom-image3"
+					src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Grupo-39.webp"
+				/>
+			</section>
+
+			<div class="contenedor-flecha-mobile">
+				<img
+					src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Grupo-39.png"
+					class="flecha-scroll-horizontal-mobile"
+					alt="Flecha"
+				/>
+				<div class="linea-flecha-mobile"></div>
+			</div>
+		</div>
+
 		<script>
-			//FLECHA y LINEA QUE SE MUEVE HASTA EL FIANL DE LA PÁGINA
+			//FLECHA y LINEA QUE SE MUEVE HASTA EL FIANL DE LA PÁGINA Desktop
+
 			const container = document.getElementById("scroll-container"); //CONTENEDOR
 			const flecha = document.querySelector(".flecha-scroll-horizontal"); //FLECHA
 			const elementos = document.querySelectorAll(".linea-flecha"); //LINEA
@@ -345,6 +625,37 @@
 					} else {
 						el.style.opacity = 1;
 					}
+				});
+			});
+
+			//LA MISMA ANIMACION PERO EN MOBILE
+
+			const containerMobile = document.getElementById("scroll-mobile2"); // CONTENEDOR
+			const flechaMobile = document.querySelector(
+				".flecha-scroll-horizontal-mobile"
+			); // FLECHA
+			const elementosMobile = document.querySelectorAll(".linea-flecha-mobile"); // LINEA
+
+			containerMobile.addEventListener("scroll", () => {
+				const scrollLeftMobile = containerMobile.scrollLeft;
+				const maxScrollMobile =
+					containerMobile.scrollWidth - containerMobile.clientWidth;
+
+				const porcentajeMobile = scrollLeftMobile / maxScrollMobile;
+				const left = 5 + porcentajeMobile * 85;
+
+				flechaMobile.style.left = `${left}vw`;
+
+				// Ocultar si llegamos al inicio o al final
+				if (porcentajeMobile > 0.99 || porcentajeMobile < 0.05) {
+					flechaMobile.style.opacity = 0;
+				} else {
+					flechaMobile.style.opacity = 1;
+				}
+
+				elementosMobile.forEach((el) => {
+					el.style.opacity =
+						porcentajeMobile > 0.99 || porcentajeMobile < 0.05 ? 0 : 1;
 				});
 			});
 
@@ -378,13 +689,13 @@
 				function (e) {
 					e.preventDefault(); // Evita el scroll vertical
 
-					const velocidad = 3; // 🔁 Ajusta este número para controlar la velocidad
+					const velocidad = 3;
 
-					container.scrollLeft += e.deltaY * velocidad; // Aumenta la velocidad del scroll horizontal
+					container.scrollLeft += e.deltaY * velocidad; //  velocidad del scroll horizontal
 				},
 				{ passive: false }
 			);
-			// Evita el scroll vertical en móvil mientras se toca el contenedor
+			// Evita el scroll vertical en celular mientras se toca el contenedor
 			container.addEventListener("touchstart", () => {
 				document.body.style.overflow = "hidden";
 			});
