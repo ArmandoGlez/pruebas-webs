@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>SplideJS Responsive</title>
+
+		<!-- CSS de Splide -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+		/>
+
+		<!-- JS de Splide -->
+		<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+		<style>
+			/* Estilo general del slide */
+			.slider-wrapper {
+				padding: 0 5rem; /* agrega espacio izquierdo y derecho */
+				box-sizing: border-box;
+			}
+			.slide-content {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 100%;
+				height: 100%;
+				box-sizing: border-box;
+			}
+
+			.slide-content img {
+				width: 100%;
+				height: auto;
+				aspect-ratio: 665 / 437;
+				object-fit: cover;
+				border-radius: 1px;
+			}
+			/* Personaliza el estilo de las flechas */
+			.splide__arrow {
+				background: none; /* color de fondo del botón */
+				color: #2f5f86; /* color de la flecha (ícono) */
+				border: none;
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				font-size: 1.5rem;
+				z-index: 10;
+				transition: background 0.3s, color 0.3s;
+			}
+
+			.splide__arrow:hover {
+				background: #f0f0f0; /* fondo al pasar el mouse */
+				color: #2f5f86; /* mantiene el color azul */
+			}
+			.slide-content p {
+				margin-top: 10px;
+				text-align: center;
+			}
+
+			/* Mover los dots hacia abajo */
+			.splide__pagination {
+				bottom: -25px !important;
+				position: absolute;
+				justify-content: center;
+			}
+
+			/* Contenedor del slider */
+			.splide {
+				max-width: 100%;
+				margin: auto;
+				padding: 2rem 0;
+				position: relative;
+			}
+			.titulo-slider {
+				font-family: "Quicksand", serif;
+				font-weight: 100;
+				font-size: 1.2rem;
+			}
+
+			.parrafo-slider {
+				font-family: "Quicksand", serif;
+				font-size: 1rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="slider-wrapper">
+			<div class="splide">
+				<div class="splide__track">
+					<ul class="splide__list">
+						<li class="splide__slide">
+							<div class="slide-content">
+								<img
+									src="https://ronival.com/wp-content/uploads/2025/07/Grupo-341.webp"
+									alt="Imagen 1"
+								/>
+								<p class="titulo-slider">Exclusive Ownership</p>
+								<p class="parrafo-slider">
+									Just 8 owners per residence. No points. No blackout dates.
+								</p>
+							</div>
+						</li>
+
+						<li class="splide__slide">
+							<div class="slide-content">
+								<img
+									src="https://ronival.com/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-05-at-11.30.12-AM.webp"
+									alt="Imagen 2"
+								/>
+								<p class="titulo-slider">Exclusive Ownership</p>
+								<p class="parrafo-slider">
+									Up to 6+ weeks per year. Book long in advance, at short
+									notice, or whenever you need an escape.
+								</p>
+							</div>
+						</li>
+
+						<li class="splide__slide">
+							<div class="slide-content">
+								<img
+									src="https://ronival.com/wp-content/uploads/2025/07/Grupo-327.webp"
+									alt="Imagen 3"
+								/>
+								<p class="titulo-slider">Exclusive Ownership</p>
+								<p class="parrafo-slider">
+									Arrive to a spotless, fully furnished luxury home.
+									Housekeeping, concierge, and maintenance are all included.
+								</p>
+							</div>
+						</li>
+
+						<li class="splide__slide">
+							<div class="slide-content">
+								<img
+									src="https://ronival.com/wp-content/uploads/2025/07/Grupo-329.webp"
+									alt="Imagen 3"
+								/>
+								<p class="titulo-slider">World-Class Amenities</p>
+								<p class="parrafo-slider">
+									Private spa, wellness center, multiple pools, tennis court,
+									gym, restaurant, coworking space, kids’ room, and more.
+								</p>
+							</div>
+						</li>
+
+						<li class="splide__slide">
+							<div class="slide-content">
+								<img
+									src="https://ronival.com/wp-content/uploads/2025/07/Grupo-211.webp"
+									alt="Imagen 3"
+								/>
+								<p class="titulo-slider">Elite Global Access</p>
+								<p class="parrafo-slider">
+									As an owner, you also enjoy privileges at
+									<span style="font-weight: bold"
+										>130+ residence clubs worldwide </span
+									>through Elite Alliance.
+								</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				new Splide(".splide", {
+					type: "loop",
+					perPage: 3,
+					gap: "1rem",
+					pagination: true,
+					breakpoints: {
+						1024: {
+							perPage: 2,
+						},
+						768: {
+							perPage: 1,
+						},
+					},
+				}).mount();
+			});
+		</script>
+	</body>
+</html>
