@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+		<title>Scroll Horizontal GSAP</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				overflow-x: hidden;
+			}
+
+			.firstContainer,
+			.lastContainer {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				font-size: 2rem;
+			}
+
+			.firstContainer {
+				background: gray;
+				flex-direction: column;
+			}
+
+			.lastContainer {
+				background: yellow;
+			}
+
+			.container {
+				display: flex;
+				height: 100vh;
+				width: auto;
+			}
+
+			.panel {
+				min-width: 100vw; /* asegura al menos 1 pantalla completa */
+				height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.villas-section {
+				display: flex;
+				color: #303527;
+				font-family: "Inter", sans-serif;
+				height: 100%;
+				width: 100%;
+			}
+
+			.villas-section2 {
+				display: flex;
+				color: #303527;
+				font-family: "Inter", sans-serif;
+			}
+
+			.villas-section3 {
+				display: flex;
+				color: #303527;
+				font-family: "Inter", sans-serif;
+			}
+
+			.villas-section4 {
+				display: flex;
+				color: #303527;
+
+				font-family: "Inter", sans-serif;
+			}
+
+			.villas-content {
+				flex: 1;
+				padding: 80px 60px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+			.villas-content2 {
+				flex: 1;
+				padding: 80px 60px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+			.villas-content3 {
+				flex: 1;
+				padding: 80px 60px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+			.villas-content4 {
+				flex: none;
+				padding: 80px 60px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+			.villas-title {
+				font-family: "Canela Deck Trial", sans-serif;
+				font-size: 65px;
+				font-weight: 100;
+				margin-bottom: 20px;
+			}
+
+			.villas-text {
+				font-weight: 100;
+				font-size: 19px;
+				max-width: 420px;
+				margin-bottom: 40px;
+			}
+
+			.villas-button {
+				font-family: "Inter", sans-serif;
+				font-size: 21px;
+				font-weight: 600;
+				padding: 12px 24px;
+				border: 2px solid #303527;
+				background: transparent;
+				color: #303527;
+				border-radius: 25px;
+				cursor: pointer;
+				width: 505px;
+			}
+
+			.contenedor-flecha {
+				position: fixed;
+				bottom: 62px;
+				left: 0;
+				width: 100%;
+				height: auto;
+				z-index: 9999;
+				pointer-events: none; /* evita que bloquee clics si hace falta */
+			}
+
+			.scroll-container {
+				display: flex;
+				height: 100vh;
+				overflow-x: scroll;
+				scroll-behavior: smooth;
+			}
+
+			.flecha-scroll-horizontal {
+				position: fixed;
+				bottom: 30px;
+				left: 0;
+				transform: translateY(0);
+				width: 62px;
+				transition: left 0.2s ease;
+				z-index: 9999;
+				transition: left 0.2s ease, opacity 0.5s ease;
+			}
+			.linea-flecha {
+				position: absolute;
+				top: 100%; /* justo debajo de la imagen */
+				left: 0;
+				width: 100%; /* misma anchura que la flecha */
+				height: 2px;
+				background-color: #c9c4bd;
+				opacity: 1;
+				transition: opacity 0.4s ease;
+			}
+
+			.flecha-scroll-horizontal,
+			.linea-flecha {
+				opacity: 0;
+			}
+
+			.linea {
+				width: 214px;
+			}
+
+			.villas-image {
+				flex: none;
+				height: 100vh;
+			}
+
+			.villas-image2 {
+				flex: 1;
+			}
+
+			.villas-image3 {
+				flex: none;
+				position: relative;
+				width: 60%;
+				height: 100vh;
+			}
+
+			.villas-image4 {
+				flex: 1;
+			}
+
+			.villas-image img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			.villas-image-3 {
+				position: relative;
+				width: 70%;
+			}
+
+			.img1 {
+				height: 100vh;
+			}
+
+			.villas-image-3 .img1 img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				display: block;
+			}
+
+			.villas-image-3 > div {
+				overflow: hidden;
+			}
+
+			.villas-image-3 img {
+				width: 100%;
+				height: 100%;
+				transition: transform 0.6s ease;
+				transform-origin: center center;
+			}
+
+			.villas-image-3 img.zoomed {
+				transform: scale(1.1);
+			}
+
+			.villas-animation img {
+				transition: transform 0.6s ease;
+				transform-origin: center center;
+			}
+
+			.villas-animation.zoomed img {
+				transform: scale(1.1);
+			}
+
+			/* Imágenes flotantes encima */
+
+			.villas-image-3 .img2,
+			.villas-image-3 .img3 {
+				position: absolute;
+				width: 30%; /* tamaño ajustable */
+				max-width: 500px;
+				z-index: 2;
+			}
+
+			.villas-image-3 .img2 {
+				bottom: 20px;
+				left: 40px;
+			}
+
+			.villas-image-3 .img3 {
+				bottom: 20px;
+				right: 40px;
+			}
+
+			.villas-image-3 .img2 img,
+			.villas-image-3 .img3 img {
+				width: 100%;
+				height: auto;
+				object-fit: cover;
+			}
+
+			.mobile {
+				display: none;
+			}
+
+			.desktop {
+				display: block;
+			}
+
+			.living-line {
+				width: 150px;
+				height: auto;
+				margin-top: 10px;
+			}
+
+			.living-gallery {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				gap: 20px;
+				padding-right: 40px;
+			}
+
+			.living-image.large img {
+				width: 100%;
+				height: auto;
+				object-fit: cover;
+			}
+
+			.living-image.small-group {
+				display: flex;
+				gap: 20px;
+			}
+
+			.living-image.small-group img {
+				width: 50%;
+				height: auto;
+				object-fit: cover;
+			}
+
+			@media (max-width: 1366px) {
+				.villas-image {
+					flex: 1;
+					height: 100vh;
+				}
+				.villas-title {
+					font-size: 60px;
+				}
+			}
+
+			@media (max-width: 768px) {
+				.villas-section {
+					display: flex;
+					color: #303527;
+					font-family: "Inter", sans-serif;
+					flex-direction: column;
+					height: 100%;
+					width: 100%;
+					padding: 0.5rem;
+				}
+
+				.mobile {
+					display: block;
+				}
+
+				.desktop {
+					display: none;
+				}
+
+				.villas-content {
+					flex: 1;
+					padding: 2rem;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+				}
+
+				.villas-title {
+					font-size: 30px;
+				}
+
+				.villas-text {
+					font-size: 14px;
+					text-align: center;
+				}
+
+				.villas-button {
+					font-size: 14px;
+					width: 300px;
+				}
+
+				.villas-section2 {
+					display: flex;
+					flex-direction: column;
+					height: 100vh;
+					padding: 0.5rem;
+				}
+
+				.villas-content2 {
+					align-items: center;
+					padding: 30px 60px;
+				}
+
+				.villas-section3 {
+					display: flex;
+					flex-direction: column;
+					height: 100vh;
+					padding: 0.5rem;
+				}
+				.villas-content3 {
+					align-items: center;
+					padding: 30px 60px;
+				}
+
+				.villas-section4 {
+					display: flex;
+					flex-direction: column;
+					height: 100vh;
+					padding: 0.5rem;
+				}
+				.villas-content4 {
+					align-items: center;
+					padding: 113px 60px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="firstContainer">
+			<h1>Testing horizontal scrolling</h1>
+			<h2>First Container</h2>
+		</div>
+
+		<div class="container">
+			<section class="panel">
+				<section class="villas-section">
+					<div class="villas-content">
+						<h2 class="villas-title">DISCOVER<br />OUR VILLAS</h2>
+						<p class="villas-text">
+							From the moment you step into the spacious living area, you’ll be
+							surrounded by the breathtaking views of the jungle and the sea
+							that define every room. The elegantly designed sitting areas,
+							sophisticated dining spaces, and serene bedrooms create a refined
+							yet inviting atmosphere, blending architectural luxury with the
+							natural beauty of the forest.
+						</p>
+						<button class="villas-button">EXPERIENCE YOUR NEW LIFESTYLE</button>
+					</div>
+					<div class="villas-image">
+						<img
+							src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Enmascarar-grupo-8.webp"
+							alt="Villas"
+						/>
+					</div>
+				</section>
+			</section>
+
+			<section class="panel">
+				<section class="villas-section2">
+					<div class="villas-content2">
+						<h2 class="villas-title">Living Area</h2>
+						<p class="villas-text">
+							Immerse yourself in the finest comfort of our spacious living
+							area. Relax by the fireplace, unwind on the plush sofa or stay
+							productive in the serene study room.
+						</p>
+						<img
+							src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Linea-5.png"
+							alt="Villas"
+							class="linea"
+						/>
+					</div>
+					<div class="villas-image-3 desktop">
+						<div class="img1">
+							<img
+								src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Enmascarar-grupo-11-1.webp"
+								alt="Villas"
+							/>
+						</div>
+						<div class="img2">
+							<img
+								src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Enmascarar-grupo-10-1.webp"
+								alt="Villas"
+							/>
+						</div>
+						<div class="img3">
+							<img
+								src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Enmascarar-grupo-12-1.webp"
+								alt="Villas"
+							/>
+						</div>
+					</div>
+
+					<div class="villas-image mobile">
+						<img
+							src="https://coolideas.mx/selvare/wp-content/uploads/2025/07/Recurso-9.png"
+							alt="Villas"
+						/>
+					</div>
+				</section>
+			</section>
+
+			<section class="panel">
+				<section class="villas-section3">
+					<div class="villas-content3">
+						<h2 class="villas-title">Dining Area</h2>
+						<p class="villas-text">
+							Enjoy culinary delights in the elegant dining area with its
+							generous indoor table and poolside terrace seating. Prepare meals
+							in the large kitchen or use the separate barbecue area for a
+							perfect outdoor dining experience.
+						</p>
+						<img
+							src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Linea-5.png"
+							alt="Villas"
+							class="linea"
+						/>
+					</div>
+					<div class="villas-image villas-image-3 desktop">
+						<img
+							src="https://coolideas.mx/selvare/wp-content/uploads/2025/07/Recurso-10.webp"
+							alt="Villas"
+							style="height: 100vh"
+						/>
+					</div>
+
+					<div class="villas-image mobile">
+						<img
+							src="https://coolideas.mx/selvare/wp-content/uploads/2025/07/Enmascarar-grupo-13.png"
+							alt="Villas"
+						/>
+					</div>
+				</section>
+			</section>
+
+			<section class="panel">
+				<section class="villas-section4">
+					<div class="villas-content4">
+						<h2 class="villas-title">Bedrooms</h2>
+						<p class="villas-text">
+							Wake up to breathtaking ocean views in one of our three stylish
+							bedrooms. Enjoy the rising and setting sun from your balcony, and
+							embrace the calming sounds of the ocean waves.
+						</p>
+						<img
+							src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Linea-5.png"
+							alt="Villas"
+							class="linea"
+						/>
+					</div>
+					<div class="villas-image desktop">
+						<img
+							src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Grupo-39.webp"
+							alt="Villas"
+						/>
+					</div>
+
+					<div class="villas-image mobile">
+						<img
+							src="https://coolideas.mx/selvare/wp-content/uploads/2025/07/Enmascarar-grupo-17.png"
+							alt="Villas"
+						/>
+					</div>
+				</section>
+			</section>
+
+			<div class="scroll-container" id="scroll-container">
+				<!-- FLECHA QUE SE MUEVE HASTA EL FINAL DE LA PÁGINA -->
+				<div class="contenedor-flecha">
+					<img
+						src="https://coolideas.mx/selvare/wp-content/uploads/2025/06/Grupo-39.png"
+						class="flecha-scroll-horizontal"
+						alt="Flecha"
+					/>
+					<div class="linea-flecha"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="lastContainer">Last Container</div>
+
+		<script>
+			gsap.registerPlugin(ScrollTrigger);
+
+			const sections = gsap.utils.toArray(".panel");
+
+			gsap.to(sections, {
+				xPercent: -100 * (sections.length - 1),
+				ease: "none",
+				scrollTrigger: {
+					trigger: ".container",
+					pin: true,
+					scrub: 1,
+					snap: 1 / (sections.length - 1),
+					end: () => "+=" + document.querySelector(".container").offsetWidth,
+				},
+			});
+
+			document.addEventListener("DOMContentLoaded", () => {
+				const images = document.querySelectorAll(
+					".villas-image-3 img, .villas-animation img"
+				);
+
+				const observer = new IntersectionObserver(
+					(entries) => {
+						entries.forEach((entry) => {
+							if (entry.isIntersecting) {
+								entry.target.classList.add("zoomed");
+							} else {
+								entry.target.classList.remove("zoomed");
+							}
+						});
+					},
+					{
+						threshold: 0.5,
+					}
+				);
+
+				images.forEach((img) => observer.observe(img));
+			});
+
+			const flecha = document.querySelector(".flecha-scroll-horizontal");
+			const elementos = document.querySelectorAll(".linea-flecha");
+
+			ScrollTrigger.create({
+				trigger: ".container",
+				start: "top top",
+				end: () => "+=" + document.querySelector(".container").offsetWidth,
+				scrub: true,
+				onUpdate: (self) => {
+					const porcentaje = self.progress; // 0 a 1
+					const left = 5 + porcentaje * 85;
+					flecha.style.left = `${left}vw`;
+
+					if (porcentaje > 0.99 || porcentaje < 0.05) {
+						flecha.style.opacity = 0;
+						elementos.forEach((el) => (el.style.opacity = 0));
+					} else {
+						flecha.style.opacity = 1;
+						elementos.forEach((el) => (el.style.opacity = 1));
+					}
+				},
+			});
+		</script>
+	</body>
+</html>
