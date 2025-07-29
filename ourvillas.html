@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider Villas</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body,
+      html {
+        height: 100%;
+      }
+
+      .slider-container {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 100vh;
+      }
+
+      .slider-wrapper {
+        display: flex;
+        transition: transform 0.4s ease-in-out;
+        height: 100%;
+      }
+
+      .slide {
+        min-width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 1rem 0.5rem;
+      }
+
+      .slide-content {
+        max-width: 700px;
+        text-align: center;
+      }
+
+      .slide-content h2 {
+        font-family: "Canela Deck Trial", sans-serif;
+        font-size: 20px;
+        font-weight: 100;
+        margin-bottom: 1rem;
+      }
+
+      .slide-content p {
+        font-family: "Inter", sans-serif;
+        font-size: 12px;
+        line-height: 1.4;
+        margin-bottom: 2rem;
+        padding-left:8rem;
+        padding-right:8rem;
+      }
+
+      .villas-button {
+        font-family: "Inter", sans-serif;
+        font-size: 0.6rem;
+        font-weight: 600;
+        width: 18rem;
+        padding: 1rem 2rem;
+        letter-spacing: 1.1px;
+        border: 2px solid #303527;
+        background: transparent;
+        color: #303527;
+        border-radius: 30px;
+        cursor: pointer;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .slide-image-wrapper {
+        width: 100%;
+        max-height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .slide-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      .linea {
+        width: 70%;
+        margin: 1rem auto;
+      }
+
+      .nav-arrows {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        pointer-events: none;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .arrow {
+        background-color: #f1edea;
+        color: #716358;
+        font-size: 1.5rem;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        pointer-events: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      .privacy {
+        margin-left: 2rem;
+        margin-top: 0.5rem;
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body data-rsssl=1>
+    <div class="slider-container">
+      <div class="slider-wrapper" id="sliderWrapper">
+        <!-- Slide 1 -->
+        <div class="slide">
+          <div class="slide-content">
+            <h2>DISCOVER OUR VILLAS</h2>
+            <p>
+              From the moment you step into the spacious living area, you’ll be
+              surrounded by the breathtaking views of the jungle and the sea
+              that define every room.
+            </p>
+            <button class="villas-button">EXPERIENCE YOUR NEW LIFESTYLE</button>
+          </div>
+          <div class="slide-image-wrapper">
+            <img
+              src="https://selvareresidences.com/wp-content/uploads/2025/07/Mobile_Discover.webp"
+              alt="Villa Image 1"
+            />
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+          <div class="slide-content">
+            <h2>Living Area</h2>
+            <p>
+              Immerse yourself in the finest comfort of our spacious living
+              area. Relax by the fireplace, unwind on the plush sofa or stay
+              productive in the serene study room.
+            </p>
+            <img
+              src="https://selvareresidences.com/wp-content/uploads/2025/06/Linea-5.png"
+              class="linea"
+              alt="Divider"
+            />
+          </div>
+          <div class="slide-image-wrapper">
+            <img
+              src="https://selvareresidences.com/wp-content/uploads/2025/07/Mobile_Living.webp"
+              alt="Villa Image 2"
+            />
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+          <div class="slide-content">
+            <h2>Dining Area</h2>
+            <p>
+              Enjoy culinary delights in the elegant dining area with its
+              generous indoor table and poolside terrace seating. Prepare meals
+              in the large kitchen or use the separate barbecue area for a
+              perfect outdoor dining experience.
+            </p>
+            <img
+              src="https://selvareresidences.com/wp-content/uploads/2025/06/Linea-5.png"
+              class="linea"
+              alt="Divider"
+            />
+          </div>
+          <div class="slide-image-wrapper">
+            <img
+              src="https://selvareresidences.com/wp-content/uploads/2025/07/Mobile_Dining.webp"
+              alt="Villa Image 3"
+            />
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide">
+          <div class="slide-content">
+            <h2>Bedrooms</h2>
+            <p>
+              Wake up to breathtaking ocean views in one of our three stylish
+              bedrooms. Enjoy the rising and setting sun from your balcony, and
+              embrace the calming sounds of the ocean waves.
+            </p>
+            <img
+              src="https://selvareresidences.com/wp-content/uploads/2025/06/Linea-5.png"
+              class="linea"
+              alt="Divider"
+            />
+          </div>
+          <div class="slide-image-wrapper">
+            <img
+              src="https://selvareresidences.com/wp-content/uploads/2025/07/Mobile_Bedrooms.webp"
+              alt="Villa Image 4"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Arrows -->
+      <div class="nav-arrows" id="navArrows">
+        <button class="arrow" id="prev">&#10094;</button>
+        <button class="arrow" id="next">&#10095;</button>
+      </div>
+    </div>
+
+    <script>
+      const sliderWrapper = document.getElementById("sliderWrapper");
+      const slides = document.querySelectorAll(".slide");
+      const prevBtn = document.getElementById("prev");
+      const nextBtn = document.getElementById("next");
+
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        const offset = -index * 100;
+        sliderWrapper.style.transform = `translateX(${offset}%)`;
+      }
+
+      prevBtn.addEventListener("click", () => {
+        currentSlide =
+          currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+        showSlide(currentSlide);
+      });
+
+      nextBtn.addEventListener("click", () => {
+        currentSlide =
+          currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
+        showSlide(currentSlide);
+      });
+    </script>
+  </body>
+</html>
