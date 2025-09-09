@@ -1,0 +1,355 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+
+<!-- Swiper (reemplaza Glider) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- GetResponse Analytics -->
+<script type="text/javascript">
+  (function(m, o, n, t, e, r, _){
+    m['__GetResponseAnalyticsObject'] = e;m[e] = m[e] || function() {(m[e].q = m[e].q || []).push(arguments)};
+    r = o.createElement(n);_ = o.getElementsByTagName(n)[0];r.async = 1;r.src = t;r.setAttribute('crossorigin', 'use-credentials');_.parentNode .insertBefore(r, _);
+  })(window, document, 'script', 'https://an.gr-wcon.com/script/ff2b9672-45f8-48d6-ab96-80e1fa3cdbe6/ga.js', 'GrTracking');
+</script>
+<!-- End GetResponse Analytics -->
+
+<style>
+  .bt-content-wrapper .container { padding: 0 !important; margin: 0; max-width: 100%; width: 100%; overflow: hidden; }
+  body { margin: 0; padding: 0; }
+  .landing * { padding: 0; margin: 0; border: 0; box-sizing: border-box; }
+  .bt-page-header { display: none; }
+  .bt-content-wrapper { padding-top: 0; }
+  .quicksand-regular  { font-family: "Quicksand", sans-serif !important; }
+  .btn-main {
+    padding: .6rem 4rem; font-weight: bold; background-color: white; color: #2f5f86; text-transform: uppercase;
+    border: 9px solid #2f5f86; outline: 1px solid white; text-decoration: none; font-family: "Quicksand", sans-serif; text-align: center;
+  }
+  .btn-main:hover { background-color: #2f5f86; outline: 1px solid white; color: white !important; }
+
+  /* Opcional: mejora visibilidad de flechas y dots del hero */
+  .hero-swiper .swiper-button-next,
+  .hero-swiper .swiper-button-prev { color: #fff; filter: drop-shadow(0 2px 8px rgba(0,0,0,.35)); }
+  .hero-swiper .swiper-pagination-bullet { background: rgba(255,255,255,.7); }
+  .hero-swiper .swiper-pagination-bullet-active { background: #fff; }
+</style>
+
+
+<div class="tw-bg-white tw-flex tw-flex-col tw-items-center tw-py-[3rem] tw-relative">
+   <!-- Logo fijo encima del slider -->
+  <div class="tw-absolute tw-top-[5rem] tw-inset-x-0 tw-mx-auto tw-z-10 tw-w-[200px] md:tw-w-[200px] max-sm:tw-w-[150px]">
+    <img src="https://www.findmexicohouses.com/files/2025/09/Grupo-379-106a8f0bf2897d92e5d71303add524330b995ff7.webp" alt="Logo" class="tw-w-full">
+  </div>
+
+<!-- HERO -->
+<div class="swiper hero-swiper tw-w-full tw-h-[80vh]">
+  <div class="swiper-wrapper">
+    <!-- Slide 1 -->
+    <div class="swiper-slide tw-w-full tw-h-[80vh] tw-bg-cover tw-bg-center"
+      style="background-image: url('https://www.findmexicohouses.com/files/2025/09/OCEANA_14-1-3c7bdcd84d1d6d4ac672138f2379e9fa0b038435-scaled.webp');"></div>
+    <!-- Slide 2 -->
+    <div class="swiper-slide tw-w-full tw-h-[80vh] tw-bg-cover tw-bg-center"
+      style="background-image: url('https://www.findmexicohouses.com/files/2025/09/OCEANA_16-2f66d32648a35d4a805b776e360f4d4d1ae36db8-scaled.webp');"></div>
+    <!-- Slide 3 -->
+    <div class="swiper-slide tw-w-full tw-h-[80vh] tw-bg-cover tw-bg-center"
+      style="background-image: url('https://www.findmexicohouses.com/files/2025/09/607A6225-Editar-2-6dc9b5b6901d74b06e48c8ec41c87978acc2fb08-scaled.webp');"></div>
+    <!-- Slide 4 -->
+    <div class="swiper-slide tw-w-full tw-h-[80vh] tw-bg-cover tw-bg-center"
+      style="background-image: url('https://www.findmexicohouses.com/files/2025/09/OCEANA_09-83e8feec18440df383592dbc5f356d04431675ce-scaled.webp');"></div>
+  </div>
+  <!-- Flechas HERO -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
+
+<div class="tw-flex tw-justify-center tw-mt-[3rem] max-md:tw-w-[60%]">
+      <img src="https://www.findmexicohouses.com/files/2025/09/Enmascarar-grupo-3-3708abc6bd974bd566a00a71843b71c08b59c9be.webp" alt="Imagen 3" class="">
+    </div>
+
+<!-- OCEANA RESIDENCE CLUB  -->
+  <h1 class="tw-text-[#2F5F86] max-lg:tw-w-[80%] max-md:tw-w-[80%] tw-mt-[3rem] tw-text-[3rem] max-md:tw-text-[2rem] tw-w-[60rem] quicksand-regular tw-text-center tw-uppercase">
+    Oceana Residence Club<BR>  El Lujo en Los Cabos,Redefinido; sin Preocupaciones.
+  </h1>
+
+  <p class="max-md:tw-w-[80%] tw-text-black tw-text-center quicksand-regular tw-text-base tw-w-[40rem]">
+    Descubre cómo poseer tu propiedad de ensueño en Los Cabos desde <strong class="tw-text-[#2F5F86]">$2.9 Millones de Pesos*</strong>
+    y disfrutar de ella sin la complejidad de preocuparte por el mantenimiento. Una decisión inteligente para tu estilo de vida.
+  </p>
+
+  <a href="https://www.findmexicohouses.com/oceana/"
+     class="tw-inline-flex tw-items-center tw-justify-center tw-bg-[#2F5F86] tw-text-white tw-font-bold tw-px-[3rem] tw-py-[1rem] tw-rounded-[12px]
+            tw-uppercase tw-transition-colors tw-duration-150 tw-ease-in-out tw-border-[1px] tw-border-solid tw-border-[#2F5F86]
+            hover:tw-bg-white hover:tw-text-[#2F5F86] tw-focus:outline-none tw-focus:ring-2 tw-focus:ring-blue-300 quicksand-regular tw-mt-[3rem] tw-mb-[5rem] max-md:tw-w-[80%] tw-text-center !tw-text-white"
+     role="button" aria-label="Quiero saber más sobre Oceana">
+     Quiero saber más sobre Oceana
+  </a>
+
+  <img class="tw-w-[80%]" src="https://www.findmexicohouses.com/files/2025/09/OCEANA_04-a0e5939265913fd07bb0e2ff6acf509a10282c57-scaled.webp">
+
+
+<!-- PROPIEDAD DE LUJO -->
+  <h2 class="tw-text-[#2F5F86] max-lg:tw-w-[80%] max-md:tw-w-[80%] tw-mt-[4rem] tw-text-[3rem] max-md:tw-text-[2rem] tw-w-[60rem] quicksand-regular tw-text-center tw-uppercase">
+    Tu Propiedad de Lujo en Los Cabos, <br class="max-md:tw-hidden"/>Diseñada para Disfrutar.
+  </h2>
+
+  <p class="max-md:tw-w-[80%] tw-text-black tw-text-center quicksand-regular tw-text-base tw-w-[40rem]">
+    Como inversionista y visionario, sabes que el verdadero lujo se encuentra en la experiencia sin complicaciones. Oceana Residence Club es la respuesta a la búsqueda de una segunda residencia que se adapte a tu vida, no al revés. Olvídate de la gestión, las cuentas y el mantenimiento. Nosotros nos encargamos de todo:
+  </p>
+
+<!-- ICONOS -->
+  <div class="tw-container tw-mx-auto tw-px-4 tw-py-8 tw-mt-[4rem] max-sm:tw-mt-[2rem] tw-w-[60%] max-lg:tw-w-[80%]">
+    <!-- Primera fila -->
+    <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-3 tw-gap-8 tw-justify-items-center">
+      <!-- Item 1 -->
+      <div class="tw-flex tw-flex-col tw-items-center tw-text-center tw-max-w-xs">
+        <img src="https://www.findmexicohouses.com/files/2025/09/Grupo-370-ea369d67e9e234f3dd5bcbb20a23ee9557b5ad51.webp" alt="Icono 1" class="tw-w-16 tw-h-16 tw-mb-1">
+        <h3 class="tw-font-semibold tw-text-[.9rem] quicksand-regular tw-mb-0">Propiedad Real y Escriturada:</h3>
+        <p class="tw-text-black quicksand-regular tw-mt-0 tw-text-[.9rem]">Adquieres una Propiedad Fraccionada en uno de los destinos más codiciados de México y del mundo. Recibes la escritura de tu propiedad.</p>
+      </div>
+      <!-- Item 2 -->
+      <div class="tw-flex tw-flex-col tw-items-center tw-text-center tw-max-w-xs">
+        <img src="https://www.findmexicohouses.com/files/2025/09/Grupo-372-c5ebf9229d3e2c71c902ff906e057aff1fcc3941.webp" alt="Icono 2" class="tw-w-16 tw-h-16 tw-mb-1">
+        <h3 class="tw-font-semibold tw-text-[.9rem] quicksand-regular tw-mb-0">Mantenimiento Cero Preocupaciones:</h3>
+        <p class="tw-text-black quicksand-regular tw-mt-0 tw-text-[.9rem]">Tu residencia siempre estará impecable, amueblada con gusto y lista para tu llegada. Nuestro equipo se encarga de la limpieza, servicios y renovaciones periódicas del mobiliario.</p>
+      </div>
+      <!-- Item 3 -->
+      <div class="tw-flex tw-flex-col tw-items-center tw-text-center tw-max-w-xs">
+        <img src="https://www.findmexicohouses.com/files/2025/09/Grupo-374-dea43ae49fc07bf11d0e8284074e3b9e0c19d267.webp" alt="Icono 3" class="tw-w-16 tw-h-16 tw-mb-1">
+        <h3 class="tw-font-semibold tw-text-[.9rem] quicksand-regular tw-mb-0">Uso Flexible y Abundante:</h3>
+        <p class="tw-text-black quicksand-regular tw-mt-0 tw-text-[.9rem]">Disfruta de al menos 6 semanas al año en tu propiedad, con la libertad de planificar cómo las usas incluyendo reservas de última hora o incluso invitar a familiares y amigos.</p>
+      </div>
+    </div>
+
+    <!-- Segunda fila -->
+    <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-8 tw-justify-center tw-mt-8">
+      <!-- Item 4 -->
+      <div class="tw-flex tw-flex-col tw-items-center tw-text-center tw-max-w-xs tw-mx-auto">
+        <img src="https://www.findmexicohouses.com/files/2025/09/Grupo-376-52932262fabe908ea5c99a944e20e2f6a00309bc.webp" alt="Icono 4" class="tw-w-16 tw-h-16 tw-mb-1">
+        <h3 class="tw-font-semibold tw-text-[.9rem] quicksand-regular tw-mb-0">Amenidades de Clase Mundial:</h3>
+        <p class="tw-text-black quicksand-regular tw-mt-0 tw-text-[.9rem]">Acceso exclusivo a spa, gimnasio, múltiples piscinas, canchas de tenis, restaurante y servicio de concierge 24/7.</p>
+      </div>
+      <!-- Item 5 -->
+      <div class="tw-flex tw-flex-col tw-items-center tw-text-center tw-max-w-xs tw-mx-auto">
+        <img src="https://www.findmexicohouses.com/files/2025/09/Grupo-378-8b417fb19427679e78c812c6151351429cb586b4.webp" alt="Icono 5" class="tw-w-16 tw-h-16 tw-mb-1">
+        <h3 class="tw-font-semibold tw-text-[.9rem] quicksand-regular tw-mb-0">Tu Pasaporte Global:</h3>
+        <p class="tw-text-black quicksand-regular tw-mt-0 tw-text-[.9rem]">Además, a través de la exclusiva red de Elite Alliance tienes acceso a estancias en propiedades de lujo alrededor del mundo las cuales puedes intercambiar por semanas de tu propiedad en Los Cabos.</p>
+      </div>
+    </div>
+  </div>
+
+
+<!-- SLIDE IMAGENES -->
+<div class="tw-relative tw-w-full tw-mt-[3rem]">
+  <div class="swiper gallery-swiper">
+    <div class="swiper-wrapper">
+      <!-- Imagen 1 -->
+      <div class="swiper-slide">
+        <img src="https://www.findmexicohouses.com/files/2025/09/607A6163-Editar-309c91ce2fe68e353566fb2c8859ede3bab11a45.webp" 
+             alt="Imagen 1" class="tw-w-full tw-h-[400px] tw-object-cover">
+      </div>
+      <!-- Imagen 2 -->
+      <div class="swiper-slide">
+        <img src="https://www.findmexicohouses.com/files/2025/09/WhatsApp-Image-2025-07-05-at-11.30.12-AM-1d647850c95011dfbfc4563254bf9a3d5aecabbd.webp" 
+             alt="Imagen 2" class="tw-w-full tw-h-[400px] tw-object-cover ">
+      </div>
+      <!-- Imagen 3 -->
+      <div class="swiper-slide">
+        <img src="https://www.findmexicohouses.com/files/2025/09/Grupo-327-310e8e5aa6530e7fc5856cdeb28d267a7a5b9251.webp" 
+             alt="Imagen 3" class="tw-w-full tw-h-[400px] tw-object-cover">
+      </div>
+      <!-- Imagen 4 -->
+      <div class="swiper-slide">
+        <img src="https://www.findmexicohouses.com/files/2025/09/Grupo-329-1ed854b45b6b299df379acb74ec712e7f80a7913.webp" 
+             alt="Imagen 4" class="tw-w-full tw-h-[400px] tw-object-cover">
+      </div>
+      <!-- Imagen 5 -->
+      <div class="swiper-slide">
+        <img src="https://www.findmexicohouses.com/files/2025/09/OCEANA_13-8db14c6f39ba6be28dc772bc019814f3cbda830f.webp" 
+             alt="Imagen 5" class="tw-w-full tw-h-[400px] tw-object-cover">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ¿QuÉ hace diferente a Oceana Residence Club de una Propiedad Total y del Tiempo Compartido? -->
+  <h2 class="tw-text-[#2F5F86] max-lg:tw-w-[80%] max-md:tw-w-[80%] tw-mt-[6rem] tw-text-[3rem] max-md:tw-text-[2rem] tw-w-[60rem] quicksand-regular tw-text-center tw-uppercase">¿QuÉ hace diferente a Oceana Residence Club de una Propiedad Total y del Tiempo Compartido?</h2>
+
+<!-- TABLA -->
+<div class="tw-overflow-x-auto tw-mt-[3rem] tw-w-[90%]">
+  <table class="tw-w-full tw-text-left tw-border-collapse quicksand-regular tw-text-base">
+    <thead>
+      <tr>
+        <th class="tw-px-4 tw-py-3 tw-font-bold tw-text-[#377E76] tw-text-center">OCEANA RESIDENCE CLUB</th>
+        <th class="tw-px-4 tw-py-3 tw-font-bold tw-text-[#377E76] tw-text-center">PROPIEDAD TOTAL</th>
+        <th class="tw-px-4 tw-py-3 tw-font-bold tw-text-[#377E76] tw-text-center">TIEMPO COMPARTIDO</th>
+      </tr>
+    </thead>
+    <tbody class="tw-text-center">
+      <tr class="tw-border-[1px] tw-border-x-0 tw-border-t-0 tw-border-solid tw-border-b-1 tw-border-b-[#377E76]">
+        <td class="tw-px-4 tw-py-3">Propiedad real escriturada.</td>
+        <td class="tw-px-4 tw-py-3">Mayor inversión inicial.</td>
+        <td class="tw-px-4 tw-py-3">Derecho de uso (no propiedad real).</td>
+      </tr>
+      <tr class="tw-border-[1px] tw-border-x-0 tw-border-t-0 tw-border-solid tw-border-b-1 tw-border-b-[#377E76]">
+        <td class="tw-px-4 tw-py-3">Inversión inicial significativamente menor.</td>
+        <td class="tw-px-4 tw-py-3">Gastos anuales elevados fijos.</td>
+        <td class="tw-px-4 tw-py-3">Uso limitado a semanas/puntos.</td>
+      </tr>
+      <tr class="tw-border-[1px] tw-border-x-0 tw-border-t-0 tw-border-solid tw-border-b-1 tw-border-b-[#377E76]">
+        <td class="tw-px-4 tw-py-3">Gastos proporcionales al uso.</td>
+        <td class="tw-px-4 tw-py-3">Responsabilidades de mantenimiento. </td>
+        <td class="tw-px-4 tw-py-3">Depreciación inicial alta.</td>
+      </tr>
+      <tr class="tw-border-[1px] tw-border-x-0 tw-border-t-0 tw-border-solid tw-border-b-1 tw-border-b-[#377E76]">
+        <td class="tw-px-4 tw-py-3">Mantenimiento y servicios incluidos.</td>
+        <td class="tw-px-4 tw-py-3">Preocupaciones por desocupación.</td>
+        <td class="tw-px-4 tw-py-3">Poca flexibilidad.</td>
+      </tr>
+      <tr class="tw-border-[1px] tw-border-x-0 tw-border-t-0 tw-border-solid tw-border-b-1 tw-border-b-[#377E76]">
+        <td class="tw-px-4 tw-py-3">Alto potencial de reventa.</td>
+        <td class="tw-px-4 tw-py-3">Anclado a un solo lugar.</td>
+        <td class="tw-px-4 tw-py-3">Reventa difícil.</td>
+      </tr>
+      <tr class="tw-border-[1px] tw-border-x-0 tw-border-t-0 tw-border-solid tw-border-b-1 tw-border-b-[#377E76]">
+        <td class="tw-px-4 tw-py-3">Uso flexible ilimitado.</td>
+        <td class="tw-px-4 tw-py-3">-</td>
+        <td class="tw-px-4 tw-py-3">-</td>
+      </tr>
+      <tr class="tw-border-[1px] tw-border-x-0 tw-border-t-0 tw-border-solid tw-border-b-1 tw-border-b-[#377E76]">
+        <td class="tw-px-4 tw-py-3">Acceso a Elite Alliance.</td>
+        <td class="tw-px-4 tw-py-3">-</td>
+        <td class="tw-px-4 tw-py-3">-</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 class="tw-text-[#2F5F86] max-md:tw-w-[80%] tw-mt-[5rem] tw-text-[3rem] max-md:tw-text-[2rem] tw-w-[60rem] quicksand-regular tw-text-center tw-uppercase">
+  ¿Listo para Vivir la Experiencia Oceana?
+</h2>
+
+<!-- DOS COLUMNAS -->
+<div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-[6rem] tw-items-center tw-w-[90%] tw-mx-auto tw-p-6 tw-mt-[2rem] tw-items-stretch">
+  <!-- Columna de texto -->
+  <div class="tw-space-y-4 tw-flex tw-justify-center tw-flex-col">
+    <p class="tw-text-black quicksand-regular">
+      Sabemos que ver es creer. Por eso, te invitamos a experimentar la magia de Los Cabos y el lujo de Oceana Residence Club con nuestro programa Fly and Buy exclusivo para Scotiabank
+      <br><br>Viaja a Los Cabos y hospédate en una de nuestras propiedades de Ronival Vacations
+    <ul class="quicksand-regular tw-text-base tw-mb-[2rem]">
+      <li>Participa en un tour guiado por <a href="#">Oceana Residence Club.</a></li>
+      <li>Si tu visita culmina en la adquisición de tu propiedad en Oceana, ¡te reembolsaremos hasta <strong>$1,500 USD</strong> por tus gastos de viaje!</li>
+    </ul>
+
+
+
+    </p>
+
+<a href="https://www.findmexicohouses.com/fly-and-buy/"
+   class="tw-inline-flex tw-items-center tw-justify-center tw-bg-[#2F5F86] tw-text-white tw-font-bold
+          tw-px-[3rem] tw-py-[1rem] tw-rounded-[12px] tw-uppercase tw-transition-colors tw-duration-150
+          tw-ease-in-out tw-border-[1px] tw-border-solid tw-border-[#2F5F86] hover:tw-bg-white hover:tw-text-[#2F5F86]
+          tw-focus:outline-none tw-focus:ring-2 tw-focus:ring-blue-300 quicksand-regular
+          tw-mt-[6rem] tw-mb-[5rem] max-md:tw-mx-auto tw-self-start tw-text-center max-md:tw-self-auto !tw-text-white"
+   role="button" aria-label="Quiero saber más sobre Oceana">
+   CALIFICA PARA EL PROGRAMA FLY AND BUY
+</a>
+  </div>
+
+  <!-- Columna de imagen -->
+  <div class="tw-flex tw-justify-center">
+    <img src="https://www.findmexicohouses.com/files/2025/09/salvador-navarro-maldonado-1ohWNFboj0A-unsplash-8b31bce5f68426e159550d5363c3a6ddc198f492.webp" alt="Imagen ejemplo">
+  </div>
+</div>
+
+<p class="max-md:tw-w-[80%] tw-text-black tw-text-center quicksand-regular tw-text-[0.9rem] tw-w-[60%] tw-font-light">
+  *Tipo de cambio aproximado: 1 USD = 18.6 MXN. Precio sujeto a cambio por apreciación del inmueble y/o fluctuación del tipo de cambio.
+</p>
+
+<div class="tw-max-w-md tw-mx-auto tw-p-6 tw-text-center tw-text-base">
+  <!-- Imagen arriba -->
+  <img src="https://www.findmexicohouses.com/files/2025/09/Grupo-359-e2d7ab4e233b67824c166f48114d158b63027a08.webp" alt="Logo" class="tw-mx-auto tw-mb-4 tw-w-[15rem]">
+  <!-- Texto de contacto -->
+  <div class="tw-text-black quicksand-regular tw-space-y-1 tw-text-base">
+    <p class="tw-font-bold">Información de contacto:</p>
+    <p><a href="mailto:broker@ronival.com" class="tw-text-black">broker@ronival.com</a></p>
+    <p>MX: 619-831-2000</p>
+
+  </div>
+
+ <p class="tw-mt-4 quicksand-regular">Políticas de privacidad, términos y condiciones.</p>
+</div>
+
+<div class="tw-w-[auto] tw-mx-auto max-md:tw-w-[80%]">
+  <getresponse-form form-id="5f3af0c3-b5c5-4869-9828-d6b8580bbf20" e="1"></getresponse-form>
+</div>
+<div class="tw-container tw-mx-auto tw-px-4 tw-py-8">
+  <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-6">
+    <!-- Columna 1 -->
+    <div class="tw-flex tw-justify-center">
+      <img src="https://www.findmexicohouses.com/files/2025/09/Elite-Alliance-Hospitality-0edbfa32b64dd41e0f5423bc9074428adff83b5d.webp" 
+           alt="Imagen 1" 
+           class="tw-w-full tw-h-auto !tw-max-w-[30rem] tw-object-contain">
+    </div>
+    <!-- Columna 2 -->
+    <div class="tw-flex tw-justify-center">
+      <img src="https://www.findmexicohouses.com/files/2025/09/Grupo-385-789d6b90a602b8d23cdd7d33afd9bc50236b18f6.webp" 
+           alt="Imagen 2" 
+           class="tw-w-full tw-h-auto !tw-max-w-[20rem] tw-object-contain">
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+<script>
+  // Inicialización Swiper
+  window.addEventListener('load', () => {
+    // HERO
+    new Swiper('.hero-swiper', {
+      loop: true,
+      speed: 700,
+      autoplay: { delay: 5000, disableOnInteraction: false },
+      navigation: {
+        nextEl: '.hero-swiper .swiper-button-next',
+        prevEl: '.hero-swiper .swiper-button-prev',
+      },
+      pagination: {
+        el: '.hero-swiper .swiper-pagination',
+        clickable: true,
+      },
+    });
+
+    // Carrusel pequeño (galería)
+    new Swiper('.gallery-swiper', {
+      loop: true,
+      speed: 500,
+autoplay: { delay: 5000, disableOnInteraction: false },
+      slidesPerView: 3,
+      spaceBetween: 16,
+      breakpoints: {
+        0:   { slidesPerView: 1, spaceBetween: 12 },
+        768: { slidesPerView: 2, spaceBetween: 14 },
+        1024:{ slidesPerView: 3, spaceBetween: 16 },
+      },
+    });
+  });
+</script>
+<style>
+  getresponse-form {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Si el iframe interno genera un ancho fijo, forzamos que también sea 100% */
+  getresponse-form iframe {
+    width: 100% !important;
+  }
+</style>
