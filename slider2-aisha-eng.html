@@ -1,0 +1,159 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+
+<!-- Swiper (reemplaza Glider) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- GetResponse Analytics -->
+<script type="text/javascript">
+  (function(m, o, n, t, e, r, _){
+    m['__GetResponseAnalyticsObject'] = e;m[e] = m[e] || function() {(m[e].q = m[e].q || []).push(arguments)};
+    r = o.createElement(n);_ = o.getElementsByTagName(n)[0];r.async = 1;r.src = t;r.setAttribute('crossorigin', 'use-credentials');_.parentNode .insertBefore(r, _);
+  })(window, document, 'script', 'https://an.gr-wcon.com/script/ff2b9672-45f8-48d6-ab96-80e1fa3cdbe6/ga.js', 'GrTracking');
+</script>
+<!-- End GetResponse Analytics -->
+
+
+<!--TAILWIND-->
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    prefix: "tw-", 
+  }
+</script>
+
+
+<style>
+  .bt-content-wrapper .container { padding: 0 !important; margin: 0; max-width: 100%; width: 100%; overflow: hidden; }
+  body { margin: 0; padding: 0; }
+  .landing * { padding: 0; margin: 0; border: 0; box-sizing: border-box; }
+  .bt-page-header { display: none; }
+  .bt-content-wrapper { padding-top: 0; }
+  .quicksand-regular  { font-family: "Quicksand", sans-serif !important; }
+  .btn-main {
+    padding: .6rem 4rem; font-weight: bold; background-color: white; color: #2f5f86; text-transform: uppercase;
+    border: 9px solid #2f5f86; outline: 1px solid white; text-decoration: none; font-family: "Quicksand", sans-serif; text-align: center;
+  }
+  .btn-main:hover { background-color: #2f5f86; outline: 1px solid white; color: white !important; }
+  
+  /* Opcional: mejora visibilidad de flechas y dots del hero */
+  .hero-swiper .swiper-button-next,
+  .hero-swiper .swiper-button-prev { color: #fff; filter: drop-shadow(0 2px 8px rgba(0,0,0,.35)); }
+  .hero-swiper .swiper-pagination-bullet { background: rgba(255,255,255,.7); }
+  .hero-swiper .swiper-pagination-bullet-active { background: #fff; }
+</style>
+
+<!-- SLIDE IMAGENES -->
+<div class="tw-relative tw-w-full">
+  <div class="swiper gallery-swiper">
+    <div class="swiper-wrapper">
+      <!-- Imagen 1 -->
+      <div class="swiper-slide">
+        <img src="https://ronival.com/wp-content/uploads/2025/09/AISHA_AMENIDADES_ROOF_DECK.jpg" 
+             alt="Imagen 1" class="tw-w-full tw-h-[400px] tw-object-cover">
+             <p style="font-family: 'Quicksand', sans-serif; text-align: center; padding-top: 2rem;" class="text-[0.7rem] ">
+ <strong> Rooftop with Pool </strong><br>
+ Enjoy unparalleled city views while relaxing in our <br>
+          rooftop pool.
+
+</p>
+      </div>
+      <!-- Imagen 2 -->
+      <div class="swiper-slide">
+        <img src="https://ronival.com/wp-content/uploads/2025/09/sujetador-blanco.jpg" 
+             alt="Imagen 2" class="tw-w-full tw-h-[400px] tw-object-cover ">
+        <p style="font-family: 'Quicksand', sans-serif; text-align: center; padding-top: 2rem;" class="text-[0.7rem] ">
+ <strong>Equipped Gym</strong><br>
+ Stay fit without leaving home in a modern and <br>
+         functional space.
+
+</p>
+      </div>
+      
+      <!-- Imagen 3 -->
+      <div class="swiper-slide">
+        <img src="https://ronival.com/wp-content/uploads/2025/09/personas-que-trabajan.jpg" 
+             alt="Imagen 3" class="tw-w-full tw-h-[400px] tw-object-cover">
+                <p style="font-family: 'Quicksand', sans-serif; text-align: center; padding-top: 2rem;" class="text-[0.7rem]">
+ <strong>Co-working Area:</strong><br>
+An ideal space to work, get inspired, and connect.
+</p>
+      </div>
+      <!-- Imagen 4 -->
+      <div class="swiper-slide">
+        <img src="https://ronival.com/wp-content/uploads/2025/09/AISHA_AMENIDADES.jpg" 
+             alt="Imagen 4" class="tw-w-full tw-h-[400px] tw-object-cover">
+                  <p style="font-family: 'Quicksand', sans-serif; text-align: center; padding-top: 2rem;" class="text-[0.7rem]">
+ <strong>Social Space</strong><br>
+The perfect place to gather and create memorable<br>
+moments with friends and family.
+
+</p>
+      </div>
+      <!-- Imagen 5 -->
+      <div class="swiper-slide">
+        <img src="https://ronival.com/wp-content/uploads/2025/09/aparcamiento.jpg" 
+             alt="Imagen 5" class="tw-w-full tw-h-[400px] tw-object-cover">
+        <p style="font-family: 'Quicksand', sans-serif; text-align: center; padding-top: 2rem;" class="text-[0.7rem] ">
+ <strong>Underground Parking</strong><br>
+We offer 50 parking spaces for your comfort and <br>
+          security
+</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Inicialización Swiper
+  window.addEventListener('load', () => {
+    // HERO
+    new Swiper('.hero-swiper', {
+      loop: true,
+      speed: 700,
+      autoplay: { delay: 5000, disableOnInteraction: false },
+      navigation: {
+        nextEl: '.hero-swiper .swiper-button-next',
+        prevEl: '.hero-swiper .swiper-button-prev',
+      },
+      pagination: {
+        el: '.hero-swiper .swiper-pagination',
+        clickable: true,
+      },
+    });
+
+    // Carrusel pequeño (galería)
+    new Swiper('.gallery-swiper', {
+      loop: true,
+      speed: 500,
+autoplay: { delay: 5000, disableOnInteraction: false },
+      slidesPerView: 3,
+      spaceBetween: 16,
+      breakpoints: {
+        0:   { slidesPerView: 1, spaceBetween: 12 },
+        768: { slidesPerView: 2, spaceBetween: 14 },
+        1024:{ slidesPerView: 3, spaceBetween: 16 },
+      },
+    });
+  });
+</script>
+<style>
+  getresponse-form {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Si el iframe interno genera un ancho fijo, forzamos que también sea 100% */
+  getresponse-form iframe {
+    width: 100% !important;
+  }
+</style>
